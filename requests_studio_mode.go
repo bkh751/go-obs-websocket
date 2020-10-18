@@ -31,7 +31,7 @@ func NewGetStudioModeStatusRequest() GetStudioModeStatusRequest {
 }
 
 // Send sends the request.
-func (r *GetStudioModeStatusRequest) Send(c Client) error {
+func (r *GetStudioModeStatusRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -79,7 +79,7 @@ func (r GetStudioModeStatusRequest) Receive() (GetStudioModeStatusResponse, erro
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r GetStudioModeStatusRequest) SendReceive(c Client) (GetStudioModeStatusResponse, error) {
+func (r GetStudioModeStatusRequest) SendReceive(c *Client) (GetStudioModeStatusResponse, error) {
 	if err := r.Send(c); err != nil {
 		return GetStudioModeStatusResponse{}, err
 	}
@@ -122,7 +122,7 @@ func NewGetPreviewSceneRequest() GetPreviewSceneRequest {
 }
 
 // Send sends the request.
-func (r *GetPreviewSceneRequest) Send(c Client) error {
+func (r *GetPreviewSceneRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -170,7 +170,7 @@ func (r GetPreviewSceneRequest) Receive() (GetPreviewSceneResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r GetPreviewSceneRequest) SendReceive(c Client) (GetPreviewSceneResponse, error) {
+func (r GetPreviewSceneRequest) SendReceive(c *Client) (GetPreviewSceneResponse, error) {
 	if err := r.Send(c); err != nil {
 		return GetPreviewSceneResponse{}, err
 	}
@@ -219,7 +219,7 @@ func NewSetPreviewSceneRequest(sceneName string) SetPreviewSceneRequest {
 }
 
 // Send sends the request.
-func (r *SetPreviewSceneRequest) Send(c Client) error {
+func (r *SetPreviewSceneRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -267,7 +267,7 @@ func (r SetPreviewSceneRequest) Receive() (SetPreviewSceneResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r SetPreviewSceneRequest) SendReceive(c Client) (SetPreviewSceneResponse, error) {
+func (r SetPreviewSceneRequest) SendReceive(c *Client) (SetPreviewSceneResponse, error) {
 	if err := r.Send(c); err != nil {
 		return SetPreviewSceneResponse{}, err
 	}
@@ -324,7 +324,7 @@ func NewTransitionToProgramRequest(
 }
 
 // Send sends the request.
-func (r *TransitionToProgramRequest) Send(c Client) error {
+func (r *TransitionToProgramRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -372,7 +372,7 @@ func (r TransitionToProgramRequest) Receive() (TransitionToProgramResponse, erro
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r TransitionToProgramRequest) SendReceive(c Client) (TransitionToProgramResponse, error) {
+func (r TransitionToProgramRequest) SendReceive(c *Client) (TransitionToProgramResponse, error) {
 	if err := r.Send(c); err != nil {
 		return TransitionToProgramResponse{}, err
 	}
@@ -411,7 +411,7 @@ func NewEnableStudioModeRequest() EnableStudioModeRequest {
 }
 
 // Send sends the request.
-func (r *EnableStudioModeRequest) Send(c Client) error {
+func (r *EnableStudioModeRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -459,7 +459,7 @@ func (r EnableStudioModeRequest) Receive() (EnableStudioModeResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r EnableStudioModeRequest) SendReceive(c Client) (EnableStudioModeResponse, error) {
+func (r EnableStudioModeRequest) SendReceive(c *Client) (EnableStudioModeResponse, error) {
 	if err := r.Send(c); err != nil {
 		return EnableStudioModeResponse{}, err
 	}
@@ -498,7 +498,7 @@ func NewDisableStudioModeRequest() DisableStudioModeRequest {
 }
 
 // Send sends the request.
-func (r *DisableStudioModeRequest) Send(c Client) error {
+func (r *DisableStudioModeRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -546,7 +546,7 @@ func (r DisableStudioModeRequest) Receive() (DisableStudioModeResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r DisableStudioModeRequest) SendReceive(c Client) (DisableStudioModeResponse, error) {
+func (r DisableStudioModeRequest) SendReceive(c *Client) (DisableStudioModeResponse, error) {
 	if err := r.Send(c); err != nil {
 		return DisableStudioModeResponse{}, err
 	}
@@ -585,7 +585,7 @@ func NewToggleStudioModeRequest() ToggleStudioModeRequest {
 }
 
 // Send sends the request.
-func (r *ToggleStudioModeRequest) Send(c Client) error {
+func (r *ToggleStudioModeRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -633,7 +633,7 @@ func (r ToggleStudioModeRequest) Receive() (ToggleStudioModeResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r ToggleStudioModeRequest) SendReceive(c Client) (ToggleStudioModeResponse, error) {
+func (r ToggleStudioModeRequest) SendReceive(c *Client) (ToggleStudioModeResponse, error) {
 	if err := r.Send(c); err != nil {
 		return ToggleStudioModeResponse{}, err
 	}

@@ -35,7 +35,7 @@ func NewSetCurrentProfileRequest(profileName string) SetCurrentProfileRequest {
 }
 
 // Send sends the request.
-func (r *SetCurrentProfileRequest) Send(c Client) error {
+func (r *SetCurrentProfileRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -83,7 +83,7 @@ func (r SetCurrentProfileRequest) Receive() (SetCurrentProfileResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r SetCurrentProfileRequest) SendReceive(c Client) (SetCurrentProfileResponse, error) {
+func (r SetCurrentProfileRequest) SendReceive(c *Client) (SetCurrentProfileResponse, error) {
 	if err := r.Send(c); err != nil {
 		return SetCurrentProfileResponse{}, err
 	}
@@ -122,7 +122,7 @@ func NewGetCurrentProfileRequest() GetCurrentProfileRequest {
 }
 
 // Send sends the request.
-func (r *GetCurrentProfileRequest) Send(c Client) error {
+func (r *GetCurrentProfileRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -170,7 +170,7 @@ func (r GetCurrentProfileRequest) Receive() (GetCurrentProfileResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r GetCurrentProfileRequest) SendReceive(c Client) (GetCurrentProfileResponse, error) {
+func (r GetCurrentProfileRequest) SendReceive(c *Client) (GetCurrentProfileResponse, error) {
 	if err := r.Send(c); err != nil {
 		return GetCurrentProfileResponse{}, err
 	}
@@ -212,7 +212,7 @@ func NewListProfilesRequest() ListProfilesRequest {
 }
 
 // Send sends the request.
-func (r *ListProfilesRequest) Send(c Client) error {
+func (r *ListProfilesRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -260,7 +260,7 @@ func (r ListProfilesRequest) Receive() (ListProfilesResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r ListProfilesRequest) SendReceive(c Client) (ListProfilesResponse, error) {
+func (r ListProfilesRequest) SendReceive(c *Client) (ListProfilesResponse, error) {
 	if err := r.Send(c); err != nil {
 		return ListProfilesResponse{}, err
 	}

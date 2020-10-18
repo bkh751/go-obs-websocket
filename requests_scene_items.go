@@ -44,7 +44,7 @@ func NewGetSceneItemPropertiesRequest(
 }
 
 // Send sends the request.
-func (r *GetSceneItemPropertiesRequest) Send(c Client) error {
+func (r *GetSceneItemPropertiesRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -92,7 +92,7 @@ func (r GetSceneItemPropertiesRequest) Receive() (GetSceneItemPropertiesResponse
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r GetSceneItemPropertiesRequest) SendReceive(c Client) (GetSceneItemPropertiesResponse, error) {
+func (r GetSceneItemPropertiesRequest) SendReceive(c *Client) (GetSceneItemPropertiesResponse, error) {
 	if err := r.Send(c); err != nil {
 		return GetSceneItemPropertiesResponse{}, err
 	}
@@ -293,7 +293,7 @@ func NewSetSceneItemPropertiesRequest(
 }
 
 // Send sends the request.
-func (r *SetSceneItemPropertiesRequest) Send(c Client) error {
+func (r *SetSceneItemPropertiesRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -341,7 +341,7 @@ func (r SetSceneItemPropertiesRequest) Receive() (SetSceneItemPropertiesResponse
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r SetSceneItemPropertiesRequest) SendReceive(c Client) (SetSceneItemPropertiesResponse, error) {
+func (r SetSceneItemPropertiesRequest) SendReceive(c *Client) (SetSceneItemPropertiesResponse, error) {
 	if err := r.Send(c); err != nil {
 		return SetSceneItemPropertiesResponse{}, err
 	}
@@ -392,7 +392,7 @@ func NewResetSceneItemRequest(
 }
 
 // Send sends the request.
-func (r *ResetSceneItemRequest) Send(c Client) error {
+func (r *ResetSceneItemRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -440,7 +440,7 @@ func (r ResetSceneItemRequest) Receive() (ResetSceneItemResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r ResetSceneItemRequest) SendReceive(c Client) (ResetSceneItemResponse, error) {
+func (r ResetSceneItemRequest) SendReceive(c *Client) (ResetSceneItemResponse, error) {
 	if err := r.Send(c); err != nil {
 		return ResetSceneItemResponse{}, err
 	}
@@ -496,7 +496,7 @@ func NewSetSceneItemRenderRequest(
 }
 
 // Send sends the request.
-func (r *SetSceneItemRenderRequest) Send(c Client) error {
+func (r *SetSceneItemRenderRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -544,7 +544,7 @@ func (r SetSceneItemRenderRequest) Receive() (SetSceneItemRenderResponse, error)
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r SetSceneItemRenderRequest) SendReceive(c Client) (SetSceneItemRenderResponse, error) {
+func (r SetSceneItemRenderRequest) SendReceive(c *Client) (SetSceneItemRenderResponse, error) {
 	if err := r.Send(c); err != nil {
 		return SetSceneItemRenderResponse{}, err
 	}
@@ -605,7 +605,7 @@ func NewSetSceneItemPositionRequest(
 }
 
 // Send sends the request.
-func (r *SetSceneItemPositionRequest) Send(c Client) error {
+func (r *SetSceneItemPositionRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -653,7 +653,7 @@ func (r SetSceneItemPositionRequest) Receive() (SetSceneItemPositionResponse, er
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r SetSceneItemPositionRequest) SendReceive(c Client) (SetSceneItemPositionResponse, error) {
+func (r SetSceneItemPositionRequest) SendReceive(c *Client) (SetSceneItemPositionResponse, error) {
 	if err := r.Send(c); err != nil {
 		return SetSceneItemPositionResponse{}, err
 	}
@@ -719,7 +719,7 @@ func NewSetSceneItemTransformRequest(
 }
 
 // Send sends the request.
-func (r *SetSceneItemTransformRequest) Send(c Client) error {
+func (r *SetSceneItemTransformRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -767,7 +767,7 @@ func (r SetSceneItemTransformRequest) Receive() (SetSceneItemTransformResponse, 
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r SetSceneItemTransformRequest) SendReceive(c Client) (SetSceneItemTransformResponse, error) {
+func (r SetSceneItemTransformRequest) SendReceive(c *Client) (SetSceneItemTransformResponse, error) {
 	if err := r.Send(c); err != nil {
 		return SetSceneItemTransformResponse{}, err
 	}
@@ -838,7 +838,7 @@ func NewSetSceneItemCropRequest(
 }
 
 // Send sends the request.
-func (r *SetSceneItemCropRequest) Send(c Client) error {
+func (r *SetSceneItemCropRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -886,7 +886,7 @@ func (r SetSceneItemCropRequest) Receive() (SetSceneItemCropResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r SetSceneItemCropRequest) SendReceive(c Client) (SetSceneItemCropResponse, error) {
+func (r SetSceneItemCropRequest) SendReceive(c *Client) (SetSceneItemCropResponse, error) {
 	if err := r.Send(c); err != nil {
 		return SetSceneItemCropResponse{}, err
 	}
@@ -947,7 +947,7 @@ func NewDeleteSceneItemRequest(
 }
 
 // Send sends the request.
-func (r *DeleteSceneItemRequest) Send(c Client) error {
+func (r *DeleteSceneItemRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -995,7 +995,7 @@ func (r DeleteSceneItemRequest) Receive() (DeleteSceneItemResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r DeleteSceneItemRequest) SendReceive(c Client) (DeleteSceneItemResponse, error) {
+func (r DeleteSceneItemRequest) SendReceive(c *Client) (DeleteSceneItemResponse, error) {
 	if err := r.Send(c); err != nil {
 		return DeleteSceneItemResponse{}, err
 	}
@@ -1062,7 +1062,7 @@ func NewDuplicateSceneItemRequest(
 }
 
 // Send sends the request.
-func (r *DuplicateSceneItemRequest) Send(c Client) error {
+func (r *DuplicateSceneItemRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -1110,7 +1110,7 @@ func (r DuplicateSceneItemRequest) Receive() (DuplicateSceneItemResponse, error)
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r DuplicateSceneItemRequest) SendReceive(c Client) (DuplicateSceneItemResponse, error) {
+func (r DuplicateSceneItemRequest) SendReceive(c *Client) (DuplicateSceneItemResponse, error) {
 	if err := r.Send(c); err != nil {
 		return DuplicateSceneItemResponse{}, err
 	}
