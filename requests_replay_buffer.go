@@ -31,7 +31,7 @@ func NewStartStopReplayBufferRequest() StartStopReplayBufferRequest {
 }
 
 // Send sends the request.
-func (r *StartStopReplayBufferRequest) Send(c Client) error {
+func (r *StartStopReplayBufferRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -79,7 +79,7 @@ func (r StartStopReplayBufferRequest) Receive() (StartStopReplayBufferResponse, 
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r StartStopReplayBufferRequest) SendReceive(c Client) (StartStopReplayBufferResponse, error) {
+func (r StartStopReplayBufferRequest) SendReceive(c *Client) (StartStopReplayBufferResponse, error) {
 	if err := r.Send(c); err != nil {
 		return StartStopReplayBufferResponse{}, err
 	}
@@ -122,7 +122,7 @@ func NewStartReplayBufferRequest() StartReplayBufferRequest {
 }
 
 // Send sends the request.
-func (r *StartReplayBufferRequest) Send(c Client) error {
+func (r *StartReplayBufferRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -170,7 +170,7 @@ func (r StartReplayBufferRequest) Receive() (StartReplayBufferResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r StartReplayBufferRequest) SendReceive(c Client) (StartReplayBufferResponse, error) {
+func (r StartReplayBufferRequest) SendReceive(c *Client) (StartReplayBufferResponse, error) {
 	if err := r.Send(c); err != nil {
 		return StartReplayBufferResponse{}, err
 	}
@@ -210,7 +210,7 @@ func NewStopReplayBufferRequest() StopReplayBufferRequest {
 }
 
 // Send sends the request.
-func (r *StopReplayBufferRequest) Send(c Client) error {
+func (r *StopReplayBufferRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -258,7 +258,7 @@ func (r StopReplayBufferRequest) Receive() (StopReplayBufferResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r StopReplayBufferRequest) SendReceive(c Client) (StopReplayBufferResponse, error) {
+func (r StopReplayBufferRequest) SendReceive(c *Client) (StopReplayBufferResponse, error) {
 	if err := r.Send(c); err != nil {
 		return StopReplayBufferResponse{}, err
 	}
@@ -300,7 +300,7 @@ func NewSaveReplayBufferRequest() SaveReplayBufferRequest {
 }
 
 // Send sends the request.
-func (r *SaveReplayBufferRequest) Send(c Client) error {
+func (r *SaveReplayBufferRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -348,7 +348,7 @@ func (r SaveReplayBufferRequest) Receive() (SaveReplayBufferResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r SaveReplayBufferRequest) SendReceive(c Client) (SaveReplayBufferResponse, error) {
+func (r SaveReplayBufferRequest) SendReceive(c *Client) (SaveReplayBufferResponse, error) {
 	if err := r.Send(c); err != nil {
 		return SaveReplayBufferResponse{}, err
 	}

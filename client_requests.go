@@ -23,7 +23,7 @@ func (c *Client) SendRequest(req Request) (chan map[string]interface{}, error) {
 	if err := c.conn.WriteJSON(req); err != nil {
 		return nil, err
 	}
-	Logger.Println("sent request", req.ID())
+	Logger.Println("sent request", req.ID(), req.Type())
 	go func() { future <- c.receive(req.ID()) }()
 	return future, nil
 }

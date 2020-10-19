@@ -20,7 +20,7 @@ var (
 type Request interface {
 	ID() string
 	Type() string
-	Send(Client) error
+	Send(*Client) error
 }
 
 // Response is a response from obs-websocket.

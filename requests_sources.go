@@ -31,7 +31,7 @@ func NewGetSourcesListRequest() GetSourcesListRequest {
 }
 
 // Send sends the request.
-func (r *GetSourcesListRequest) Send(c Client) error {
+func (r *GetSourcesListRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -79,7 +79,7 @@ func (r GetSourcesListRequest) Receive() (GetSourcesListResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r GetSourcesListRequest) SendReceive(c Client) (GetSourcesListResponse, error) {
+func (r GetSourcesListRequest) SendReceive(c *Client) (GetSourcesListResponse, error) {
 	if err := r.Send(c); err != nil {
 		return GetSourcesListResponse{}, err
 	}
@@ -131,7 +131,7 @@ func NewGetSourceTypesListRequest() GetSourceTypesListRequest {
 }
 
 // Send sends the request.
-func (r *GetSourceTypesListRequest) Send(c Client) error {
+func (r *GetSourceTypesListRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -179,7 +179,7 @@ func (r GetSourceTypesListRequest) Receive() (GetSourceTypesListResponse, error)
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r GetSourceTypesListRequest) SendReceive(c Client) (GetSourceTypesListResponse, error) {
+func (r GetSourceTypesListRequest) SendReceive(c *Client) (GetSourceTypesListResponse, error) {
 	if err := r.Send(c); err != nil {
 		return GetSourceTypesListResponse{}, err
 	}
@@ -262,7 +262,7 @@ func NewGetVolumeRequest(source string) GetVolumeRequest {
 }
 
 // Send sends the request.
-func (r *GetVolumeRequest) Send(c Client) error {
+func (r *GetVolumeRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -310,7 +310,7 @@ func (r GetVolumeRequest) Receive() (GetVolumeResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r GetVolumeRequest) SendReceive(c Client) (GetVolumeResponse, error) {
+func (r GetVolumeRequest) SendReceive(c *Client) (GetVolumeResponse, error) {
 	if err := r.Send(c); err != nil {
 		return GetVolumeResponse{}, err
 	}
@@ -371,7 +371,7 @@ func NewSetVolumeRequest(
 }
 
 // Send sends the request.
-func (r *SetVolumeRequest) Send(c Client) error {
+func (r *SetVolumeRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -419,7 +419,7 @@ func (r SetVolumeRequest) Receive() (SetVolumeResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r SetVolumeRequest) SendReceive(c Client) (SetVolumeResponse, error) {
+func (r SetVolumeRequest) SendReceive(c *Client) (SetVolumeResponse, error) {
 	if err := r.Send(c); err != nil {
 		return SetVolumeResponse{}, err
 	}
@@ -462,7 +462,7 @@ func NewGetMuteRequest(source string) GetMuteRequest {
 }
 
 // Send sends the request.
-func (r *GetMuteRequest) Send(c Client) error {
+func (r *GetMuteRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -510,7 +510,7 @@ func (r GetMuteRequest) Receive() (GetMuteResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r GetMuteRequest) SendReceive(c Client) (GetMuteResponse, error) {
+func (r GetMuteRequest) SendReceive(c *Client) (GetMuteResponse, error) {
 	if err := r.Send(c); err != nil {
 		return GetMuteResponse{}, err
 	}
@@ -566,7 +566,7 @@ func NewSetMuteRequest(
 }
 
 // Send sends the request.
-func (r *SetMuteRequest) Send(c Client) error {
+func (r *SetMuteRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -614,7 +614,7 @@ func (r SetMuteRequest) Receive() (SetMuteResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r SetMuteRequest) SendReceive(c Client) (SetMuteResponse, error) {
+func (r SetMuteRequest) SendReceive(c *Client) (SetMuteResponse, error) {
 	if err := r.Send(c); err != nil {
 		return SetMuteResponse{}, err
 	}
@@ -657,7 +657,7 @@ func NewToggleMuteRequest(source string) ToggleMuteRequest {
 }
 
 // Send sends the request.
-func (r *ToggleMuteRequest) Send(c Client) error {
+func (r *ToggleMuteRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -705,7 +705,7 @@ func (r ToggleMuteRequest) Receive() (ToggleMuteResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r ToggleMuteRequest) SendReceive(c Client) (ToggleMuteResponse, error) {
+func (r ToggleMuteRequest) SendReceive(c *Client) (ToggleMuteResponse, error) {
 	if err := r.Send(c); err != nil {
 		return ToggleMuteResponse{}, err
 	}
@@ -755,7 +755,7 @@ func NewSetSyncOffsetRequest(
 }
 
 // Send sends the request.
-func (r *SetSyncOffsetRequest) Send(c Client) error {
+func (r *SetSyncOffsetRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -803,7 +803,7 @@ func (r SetSyncOffsetRequest) Receive() (SetSyncOffsetResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r SetSyncOffsetRequest) SendReceive(c Client) (SetSyncOffsetResponse, error) {
+func (r SetSyncOffsetRequest) SendReceive(c *Client) (SetSyncOffsetResponse, error) {
 	if err := r.Send(c); err != nil {
 		return SetSyncOffsetResponse{}, err
 	}
@@ -846,7 +846,7 @@ func NewGetSyncOffsetRequest(source string) GetSyncOffsetRequest {
 }
 
 // Send sends the request.
-func (r *GetSyncOffsetRequest) Send(c Client) error {
+func (r *GetSyncOffsetRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -894,7 +894,7 @@ func (r GetSyncOffsetRequest) Receive() (GetSyncOffsetResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r GetSyncOffsetRequest) SendReceive(c Client) (GetSyncOffsetResponse, error) {
+func (r GetSyncOffsetRequest) SendReceive(c *Client) (GetSyncOffsetResponse, error) {
 	if err := r.Send(c); err != nil {
 		return GetSyncOffsetResponse{}, err
 	}
@@ -951,7 +951,7 @@ func NewGetSourceSettingsRequest(
 }
 
 // Send sends the request.
-func (r *GetSourceSettingsRequest) Send(c Client) error {
+func (r *GetSourceSettingsRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -999,7 +999,7 @@ func (r GetSourceSettingsRequest) Receive() (GetSourceSettingsResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r GetSourceSettingsRequest) SendReceive(c Client) (GetSourceSettingsResponse, error) {
+func (r GetSourceSettingsRequest) SendReceive(c *Client) (GetSourceSettingsResponse, error) {
 	if err := r.Send(c); err != nil {
 		return GetSourceSettingsResponse{}, err
 	}
@@ -1064,7 +1064,7 @@ func NewSetSourceSettingsRequest(
 }
 
 // Send sends the request.
-func (r *SetSourceSettingsRequest) Send(c Client) error {
+func (r *SetSourceSettingsRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -1112,7 +1112,7 @@ func (r SetSourceSettingsRequest) Receive() (SetSourceSettingsResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r SetSourceSettingsRequest) SendReceive(c Client) (SetSourceSettingsResponse, error) {
+func (r SetSourceSettingsRequest) SendReceive(c *Client) (SetSourceSettingsResponse, error) {
 	if err := r.Send(c); err != nil {
 		return SetSourceSettingsResponse{}, err
 	}
@@ -1164,7 +1164,7 @@ func NewGetTextGDIPlusPropertiesRequest(source string) GetTextGDIPlusPropertiesR
 }
 
 // Send sends the request.
-func (r *GetTextGDIPlusPropertiesRequest) Send(c Client) error {
+func (r *GetTextGDIPlusPropertiesRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -1212,7 +1212,7 @@ func (r GetTextGDIPlusPropertiesRequest) Receive() (GetTextGDIPlusPropertiesResp
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r GetTextGDIPlusPropertiesRequest) SendReceive(c Client) (GetTextGDIPlusPropertiesResponse, error) {
+func (r GetTextGDIPlusPropertiesRequest) SendReceive(c *Client) (GetTextGDIPlusPropertiesResponse, error) {
 	if err := r.Send(c); err != nil {
 		return GetTextGDIPlusPropertiesResponse{}, err
 	}
@@ -1485,7 +1485,7 @@ func NewSetTextGDIPlusPropertiesRequest(
 }
 
 // Send sends the request.
-func (r *SetTextGDIPlusPropertiesRequest) Send(c Client) error {
+func (r *SetTextGDIPlusPropertiesRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -1533,7 +1533,7 @@ func (r SetTextGDIPlusPropertiesRequest) Receive() (SetTextGDIPlusPropertiesResp
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r SetTextGDIPlusPropertiesRequest) SendReceive(c Client) (SetTextGDIPlusPropertiesResponse, error) {
+func (r SetTextGDIPlusPropertiesRequest) SendReceive(c *Client) (SetTextGDIPlusPropertiesResponse, error) {
 	if err := r.Send(c); err != nil {
 		return SetTextGDIPlusPropertiesResponse{}, err
 	}
@@ -1576,7 +1576,7 @@ func NewGetTextFreetype2PropertiesRequest(source string) GetTextFreetype2Propert
 }
 
 // Send sends the request.
-func (r *GetTextFreetype2PropertiesRequest) Send(c Client) error {
+func (r *GetTextFreetype2PropertiesRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -1624,7 +1624,7 @@ func (r GetTextFreetype2PropertiesRequest) Receive() (GetTextFreetype2Properties
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r GetTextFreetype2PropertiesRequest) SendReceive(c Client) (GetTextFreetype2PropertiesResponse, error) {
+func (r GetTextFreetype2PropertiesRequest) SendReceive(c *Client) (GetTextFreetype2PropertiesResponse, error) {
 	if err := r.Send(c); err != nil {
 		return GetTextFreetype2PropertiesResponse{}, err
 	}
@@ -1796,7 +1796,7 @@ func NewSetTextFreetype2PropertiesRequest(
 }
 
 // Send sends the request.
-func (r *SetTextFreetype2PropertiesRequest) Send(c Client) error {
+func (r *SetTextFreetype2PropertiesRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -1844,7 +1844,7 @@ func (r SetTextFreetype2PropertiesRequest) Receive() (SetTextFreetype2Properties
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r SetTextFreetype2PropertiesRequest) SendReceive(c Client) (SetTextFreetype2PropertiesResponse, error) {
+func (r SetTextFreetype2PropertiesRequest) SendReceive(c *Client) (SetTextFreetype2PropertiesResponse, error) {
 	if err := r.Send(c); err != nil {
 		return SetTextFreetype2PropertiesResponse{}, err
 	}
@@ -1887,7 +1887,7 @@ func NewGetBrowserSourcePropertiesRequest(source string) GetBrowserSourcePropert
 }
 
 // Send sends the request.
-func (r *GetBrowserSourcePropertiesRequest) Send(c Client) error {
+func (r *GetBrowserSourcePropertiesRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -1935,7 +1935,7 @@ func (r GetBrowserSourcePropertiesRequest) Receive() (GetBrowserSourceProperties
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r GetBrowserSourcePropertiesRequest) SendReceive(c Client) (GetBrowserSourcePropertiesResponse, error) {
+func (r GetBrowserSourcePropertiesRequest) SendReceive(c *Client) (GetBrowserSourcePropertiesResponse, error) {
 	if err := r.Send(c); err != nil {
 		return GetBrowserSourcePropertiesResponse{}, err
 	}
@@ -2052,7 +2052,7 @@ func NewSetBrowserSourcePropertiesRequest(
 }
 
 // Send sends the request.
-func (r *SetBrowserSourcePropertiesRequest) Send(c Client) error {
+func (r *SetBrowserSourcePropertiesRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -2100,7 +2100,7 @@ func (r SetBrowserSourcePropertiesRequest) Receive() (SetBrowserSourceProperties
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r SetBrowserSourcePropertiesRequest) SendReceive(c Client) (SetBrowserSourcePropertiesResponse, error) {
+func (r SetBrowserSourcePropertiesRequest) SendReceive(c *Client) (SetBrowserSourcePropertiesResponse, error) {
 	if err := r.Send(c); err != nil {
 		return SetBrowserSourcePropertiesResponse{}, err
 	}
@@ -2139,7 +2139,7 @@ func NewGetSpecialSourcesRequest() GetSpecialSourcesRequest {
 }
 
 // Send sends the request.
-func (r *GetSpecialSourcesRequest) Send(c Client) error {
+func (r *GetSpecialSourcesRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -2187,7 +2187,7 @@ func (r GetSpecialSourcesRequest) Receive() (GetSpecialSourcesResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r GetSpecialSourcesRequest) SendReceive(c Client) (GetSpecialSourcesResponse, error) {
+func (r GetSpecialSourcesRequest) SendReceive(c *Client) (GetSpecialSourcesResponse, error) {
 	if err := r.Send(c); err != nil {
 		return GetSpecialSourcesResponse{}, err
 	}
@@ -2245,7 +2245,7 @@ func NewGetSourceFiltersRequest(sourceName string) GetSourceFiltersRequest {
 }
 
 // Send sends the request.
-func (r *GetSourceFiltersRequest) Send(c Client) error {
+func (r *GetSourceFiltersRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -2293,7 +2293,7 @@ func (r GetSourceFiltersRequest) Receive() (GetSourceFiltersResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r GetSourceFiltersRequest) SendReceive(c Client) (GetSourceFiltersResponse, error) {
+func (r GetSourceFiltersRequest) SendReceive(c *Client) (GetSourceFiltersResponse, error) {
 	if err := r.Send(c); err != nil {
 		return GetSourceFiltersResponse{}, err
 	}
@@ -2358,7 +2358,7 @@ func NewGetSourceFilterInfoRequest(
 }
 
 // Send sends the request.
-func (r *GetSourceFilterInfoRequest) Send(c Client) error {
+func (r *GetSourceFilterInfoRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -2406,7 +2406,7 @@ func (r GetSourceFilterInfoRequest) Receive() (GetSourceFilterInfoResponse, erro
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r GetSourceFilterInfoRequest) SendReceive(c Client) (GetSourceFilterInfoResponse, error) {
+func (r GetSourceFilterInfoRequest) SendReceive(c *Client) (GetSourceFilterInfoResponse, error) {
 	if err := r.Send(c); err != nil {
 		return GetSourceFilterInfoResponse{}, err
 	}
@@ -2479,7 +2479,7 @@ func NewAddFilterToSourceRequest(
 }
 
 // Send sends the request.
-func (r *AddFilterToSourceRequest) Send(c Client) error {
+func (r *AddFilterToSourceRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -2527,7 +2527,7 @@ func (r AddFilterToSourceRequest) Receive() (AddFilterToSourceResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r AddFilterToSourceRequest) SendReceive(c Client) (AddFilterToSourceResponse, error) {
+func (r AddFilterToSourceRequest) SendReceive(c *Client) (AddFilterToSourceResponse, error) {
 	if err := r.Send(c); err != nil {
 		return AddFilterToSourceResponse{}, err
 	}
@@ -2577,7 +2577,7 @@ func NewRemoveFilterFromSourceRequest(
 }
 
 // Send sends the request.
-func (r *RemoveFilterFromSourceRequest) Send(c Client) error {
+func (r *RemoveFilterFromSourceRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -2625,7 +2625,7 @@ func (r RemoveFilterFromSourceRequest) Receive() (RemoveFilterFromSourceResponse
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r RemoveFilterFromSourceRequest) SendReceive(c Client) (RemoveFilterFromSourceResponse, error) {
+func (r RemoveFilterFromSourceRequest) SendReceive(c *Client) (RemoveFilterFromSourceResponse, error) {
 	if err := r.Send(c); err != nil {
 		return RemoveFilterFromSourceResponse{}, err
 	}
@@ -2680,7 +2680,7 @@ func NewReorderSourceFilterRequest(
 }
 
 // Send sends the request.
-func (r *ReorderSourceFilterRequest) Send(c Client) error {
+func (r *ReorderSourceFilterRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -2728,7 +2728,7 @@ func (r ReorderSourceFilterRequest) Receive() (ReorderSourceFilterResponse, erro
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r ReorderSourceFilterRequest) SendReceive(c Client) (ReorderSourceFilterResponse, error) {
+func (r ReorderSourceFilterRequest) SendReceive(c *Client) (ReorderSourceFilterResponse, error) {
 	if err := r.Send(c); err != nil {
 		return ReorderSourceFilterResponse{}, err
 	}
@@ -2784,7 +2784,7 @@ func NewMoveSourceFilterRequest(
 }
 
 // Send sends the request.
-func (r *MoveSourceFilterRequest) Send(c Client) error {
+func (r *MoveSourceFilterRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -2832,7 +2832,7 @@ func (r MoveSourceFilterRequest) Receive() (MoveSourceFilterResponse, error) {
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r MoveSourceFilterRequest) SendReceive(c Client) (MoveSourceFilterResponse, error) {
+func (r MoveSourceFilterRequest) SendReceive(c *Client) (MoveSourceFilterResponse, error) {
 	if err := r.Send(c); err != nil {
 		return MoveSourceFilterResponse{}, err
 	}
@@ -2888,7 +2888,7 @@ func NewSetSourceFilterSettingsRequest(
 }
 
 // Send sends the request.
-func (r *SetSourceFilterSettingsRequest) Send(c Client) error {
+func (r *SetSourceFilterSettingsRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -2936,7 +2936,7 @@ func (r SetSourceFilterSettingsRequest) Receive() (SetSourceFilterSettingsRespon
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r SetSourceFilterSettingsRequest) SendReceive(c Client) (SetSourceFilterSettingsResponse, error) {
+func (r SetSourceFilterSettingsRequest) SendReceive(c *Client) (SetSourceFilterSettingsResponse, error) {
 	if err := r.Send(c); err != nil {
 		return SetSourceFilterSettingsResponse{}, err
 	}
@@ -2991,7 +2991,7 @@ func NewSetSourceFilterVisibilityRequest(
 }
 
 // Send sends the request.
-func (r *SetSourceFilterVisibilityRequest) Send(c Client) error {
+func (r *SetSourceFilterVisibilityRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -3039,7 +3039,7 @@ func (r SetSourceFilterVisibilityRequest) Receive() (SetSourceFilterVisibilityRe
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r SetSourceFilterVisibilityRequest) SendReceive(c Client) (SetSourceFilterVisibilityResponse, error) {
+func (r SetSourceFilterVisibilityRequest) SendReceive(c *Client) (SetSourceFilterVisibilityResponse, error) {
 	if err := r.Send(c); err != nil {
 		return SetSourceFilterVisibilityResponse{}, err
 	}
@@ -3059,7 +3059,7 @@ type SetSourceFilterVisibilityResponse struct {
 //
 // At least `embedPictureFormat` or `saveToFilePath` must be specified.
 //
-// Clients can specify `width` and `height` parameters to receive scaled pictures
+// *Clients can specify `width` and `height` parameters to receive scaled pictures
 // Aspect ratio is
 // preserved if only one of these two parameters is specified.
 //
@@ -3116,7 +3116,7 @@ func NewTakeSourceScreenshotRequest(
 }
 
 // Send sends the request.
-func (r *TakeSourceScreenshotRequest) Send(c Client) error {
+func (r *TakeSourceScreenshotRequest) Send(c *Client) error {
 	if r.sent {
 		return ErrAlreadySent
 	}
@@ -3164,7 +3164,7 @@ func (r TakeSourceScreenshotRequest) Receive() (TakeSourceScreenshotResponse, er
 }
 
 // SendReceive sends the request then immediately waits for the response.
-func (r TakeSourceScreenshotRequest) SendReceive(c Client) (TakeSourceScreenshotResponse, error) {
+func (r TakeSourceScreenshotRequest) SendReceive(c *Client) (TakeSourceScreenshotResponse, error) {
 	if err := r.Send(c); err != nil {
 		return TakeSourceScreenshotResponse{}, err
 	}
